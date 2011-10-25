@@ -33,7 +33,7 @@
   <p><strong><%= t(:add_another_service_to_sign_in_with) %>:</strong></p>
 <% end %>
 
-<%= render :partial => "shared/socials" %>
+<%= hook :login_extras %>
 
 <div class="clear"></div>
 
