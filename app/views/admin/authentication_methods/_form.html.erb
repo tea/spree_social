@@ -41,6 +41,15 @@
         </span>
       </p>
 
+      <p>
+        <%= f.label :preferred_api_public, t('social_api_secret') %><br />
+        <%= f.text_field :preferred_api_public, :size => 40, :maxlength => 256 %>
+        <br/>
+        <span class="info">
+          <%= t("social_api_public") %>
+        </span>
+      </p>
+
     </fieldset>
 
   </div>

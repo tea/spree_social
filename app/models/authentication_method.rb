@@ -3,6 +3,7 @@ class AuthenticationMethod < ActiveRecord::Base
   preference :provider, :string
   preference :api_key, :string
   preference :api_secret, :string
+  preference :api_public, :string
   preference :environment, :string
 
   #after_save :reset_devise

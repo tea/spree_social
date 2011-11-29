@@ -21,7 +21,8 @@ module SpreeSocial
     ["Yahoo!", "yahoo"], 
     ["YouTube", "you_tube"], 
     ["Vkontakte", "vkontakte"], 
-    ["Mailru", "mailru"]
+    ["Mailru", "mailru"],
+    ["Odnoklassniki", "odnoklassniki"]
     #["Blogger", "blogger"],
     #["Dropbox", "dropbox"]
   ]
@@ -43,20 +44,21 @@ module SpreeSocial
   # We are setting these providers up regardless
   # This way we can update them when and where necessary
   def self.init_provider(provider)
-    key, secret = nil
+    key, secret, public_key = nil
     AuthenticationMethod.where(:environment => ::Rails.env).each do |user|
       if user.preferred_provider == provider
         key = user.preferred_api_key
         secret = user.preferred_api_secret
+        public_key = user.preferred_api_public
         puts("[Spree Social] Loading #{user.preferred_provider.capitalize} as authentication source")
       end
     end if self.table_exists?("authentication_methods") # See Below for explanation
-    self.setup_key_for(provider.to_sym, key, secret)
+    self.setup_key_for(provider.to_sym, key, secret, public_key)
   end
 
-  def self.setup_key_for(provider, key, secret)
+  def self.setup_key_for(provider, key, secret, public_key)
     Devise.setup do |oa|
-      oa.omniauth provider.to_sym, key, secret
+      oa.omniauth provider.to_sym, key, secret, :public_key => public_key
     end
   end
 

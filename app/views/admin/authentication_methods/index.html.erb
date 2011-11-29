@@ -17,6 +17,7 @@
       <th><%= t("provider") %></th>
       <th><%= t("social_api_key") %></th>
       <th><%= t("social_api_secret") %></th>
+      <th><%= t("social_api_public") %></th>
       <th><%= t("environment") %></th>
       <th><%= t("active") %></th>
     <% end %>
@@ -32,6 +33,7 @@
           <td><%= method.preferred_provider %></td>
           <td><%= method.preferred_api_key %></td>
           <td><%= method.preferred_api_secret %></td>
+          <td><%= method.preferred_api_public %></td>
           <td><%= method.environment.to_s.titleize %></td>
           <td><%= method.active ? t(:yes) : t(:no) %></td>
         <% end %>

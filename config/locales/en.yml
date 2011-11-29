@@ -18,6 +18,7 @@ en:
   sign_in_with_provider: 'Sign in with %{provider}'
   social_api_key: Authentication API Key
   social_api_secret: Authentication Secret
+  social_api_public: Authentication Public Key
   social_enable_provider: Enable Authentication Source
   social_link: Please provide your email address to continue
   social_methods: Social Network Providers

@@ -18,6 +18,7 @@ ru:
   sign_in_with_provider: 'Войти с помощью %{provider}'
   social_api_key: API Key аутентификации
   social_api_secret: Секрет
+  social_api_public: Публичный ключ (только для Odnoklassniki.ru)
   social_enable_provider: Включить источник аутентификации
   social_link: Пожалуйста, предоставьте свой email для продолжения
   social_methods: Провайдеры
